@@ -22,15 +22,16 @@ import CardTeam from "./shared/CardTeam.astro";
       class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 place-items-center gap-4"
     >
       {
-        teamData.team.map(({ title, description, name, link, profile }) => (
-          <CardTeam
-            title={title}
-            description={description}
-            name={name}
-            link={link}
-            profile={profile}
-          />
-        ))
+        teamData.team.map(
+          ({ title, description, name, /* link,  */ profile }) => (
+            <CardTeam
+              title={title}
+              description={description}
+              name={name}
+              profile={profile}
+            />
+          )
+        )
       }
     </div>
   </div>
