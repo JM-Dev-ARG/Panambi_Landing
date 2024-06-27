@@ -1,0 +1,15 @@
+---
+export interface Props {
+  texto: string;
+}
+
+const { texto } = Astro.props;
+---
+
+<a
+  class="px-9 py-5 bg-violeta-100 hover:bg-violeta-200 text-white hover:text-black rounded-2xl justify-items-center md:justify-items-start gap-2.5 inline-flex transition-all duration-300"
+  rel="noopener noreferrer"
+  href="#contacto"
+>
+  <h2 class="text-center text-xl font-normal leading-7">{texto}</h2>
+</a>

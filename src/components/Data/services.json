@@ -1,56 +1,42 @@
 [
     {
         "id": 1,
-        "name1": "Search engine",
-        "name2": "optimization",
-        "background": "h-[310px] p-12 bg-zinc-100 rounded-[45px] shadow-card border border-black justify-between items-center flex text-black",
+        "name1": "Social Media",
+        "name2": "Marketing",
+        "textColor": "text-black",
+        "background": "#F3F3F3",
+        "arrow": "./services/ag.svg",
+        "link": "./",
+        "image": "./services/03.svg"
+    },
+    {
+        "id": 2,
+        "name1": "Desarrollo",
+        "name2": "Web",
+        "textColor": "text-black",
+        "background": "#d2df8a",
         "arrow": "./services/ag.svg",
         "link": "./",
         "image": "./services/01.svg"
     },
     {
-        "id": 2,
-        "name1": "Pay-per-click",
-        "name2": "advertising",
-        "background": "h-[310px] p-12 bg-lime rounded-[45px] shadow-card border border-black justify-between items-center flex text-black",
-        "arrow": "./services/ag.svg",
-        "link": "./",
-        "image": "./services/02.svg"
-    },
-    {
         "id": 3,
-        "name1": "Social Media",
-        "name2": "Marketing",
-        "background": "h-[310px] p-12 bg-black rounded-[45px] shadow-card border border-black justify-between items-center flex text-white",
-        "arrow": "./services/aw.svg",
-        "link": "./",
-        "image": "./services/03.svg"
-    },
-    {
-        "id": 4,
         "name1": "Email",
         "name2": "Marketing",
-        "background": "h-[310px] p-12 bg-zinc-100 rounded-[45px] shadow-card border border-black justify-between items-center flex text-black",
-        "arrow": "./services/ag.svg",
+        "textColor": "text-white",
+        "background": "black ",
+        "arrow": "./services/aw.svg",
         "link": "./",
         "image": "./services/04.svg"
     },
     {
-        "id": 5,
+        "id": 4,
         "name1": "Content",
         "name2": "Creation",
-        "background": "h-[310px] p-12 bg-lime rounded-[45px] shadow-card border border-black justify-between items-center flex text-black",
+        "textColor": "text-black",
+        "background": "#aa8abf",
         "arrow": "./services/ag.svg",
         "link": "./",
         "image": "./services/05.svg"
-    },
-    {
-        "id": 6,
-        "name1": "Analytics and",
-        "name2": "Tracking",
-        "background": "h-[310px] p-12 bg-black rounded-[45px] shadow-card border border-black justify-between items-center flex text-white",
-        "arrow": "./services/aw.svg",
-        "link": "./",
-        "image": "./services/06.svg"
     }
 ]

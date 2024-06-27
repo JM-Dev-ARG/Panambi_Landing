@@ -1,24 +1,117 @@
 ---
-import Container from "./Container.astro"
+import Container from "./shared/Container.astro";
+import InstagramSVG from "./svgIcons/InstagramSVG.astro";
+import LinkedinSVG from "./svgIcons/LinkedinSVG.astro";
+import MailSVG from "./svgIcons/MailSVG.astro";
+import WhatsappSVG from "./svgIcons/WhatsappSVG.astro";
 ---
-<footer class="bg-lime bg-fixed bg-bottom text-black">
-    <Container>
+
+<footer class="bg-violeta-100 bg-bottom">
+  <Container>
     <div class="py-6">
-        <div class="flex flex-col items-center justify-between md:flex-row">
-            <div class="flex items-center space-x-3 rtl:space-x-reverse">
-                <img class="w-auto" src="/Logo.svg" alt="Logo">
-            </div>
-            <div class="flex mt-4 md:m-0">
-                <div class="-mx-4">
-                    @ <span id="currentYear"></span> Positivus | Made with <a href="https://astro.build/" target="_blank" rel="noopener noreferrer" class="underline">Astro</a></div>
-                </div>
-            </div>
+      <div class="flex flex-col items-center justify-between md:flex-row">
+        <div class="flex items-center space-x-3 rtl:space-x-reverse">
+          <img
+            class="w-auto h-28"
+            src="/svg/favicon.svg"
+            alt="Logo Agencia Panambi"
+          />
         </div>
+
+        <div class="flex flex-row gap-4">
+          <a
+            aria-label="Link al Instagram de Agencia Panambi"
+            href="https://www.instagram.com/panambi.ag/?igsh=MWNtb3o3NXRyc2p6aw%3D%3D"
+            target="_blank"
+            class="transition hover:scale-150"
+          >
+            <InstagramSVG
+              width="30"
+              height="30"
+            />
+          </a>
+
+          <a
+            aria-label="Link al Linkedin de Agencia Panambi"
+            href="https://www.linkedin.com/company/panambi-ag/"
+            target="_blank"
+            class="transition hover:scale-150 hover:text-[#0a66c2]"
+          >
+            <LinkedinSVG
+              width="30"
+              height="30"
+            />
+          </a>
+
+          <button
+            aria-label="Link para copiar el mail de Agencia Panambi"
+            id="mail"
+            class="transition hover:scale-150 hover:text-red-400"
+          >
+            <MailSVG
+              width="30"
+              height="30"
+            />
+          </button>
+          <a
+            aria-label="Link para mensaje directo al Wathsapp Agencia Panambi"
+            href="https://wa.me/5491131664971?text=Hola, quiero hacerles una consulta"
+            target="_blank"
+            class="transition hover:scale-150 hover:text-[#2bd46a]"
+          >
+            <WhatsappSVG
+              width="30"
+              height="30"
+            />
+          </a>
+        </div>
+      </div>
     </div>
-    </Container>
+    <p class="text-center text-xs font-semibold text-gray-500">
+      Desarrollado por <a
+        aria-label="Link al Github de JM-Dev"
+        href="https://github.com/JM-Dev-ARG"
+        target="_blank"
+        >JM-DEV</a
+      > / Agencia Panambi
+    </p>
+  </Container>
 </footer>
 
-<script is:inline>
-    const year = new Date().getFullYear();
-    document.getElementById("currentYear").innerHTML = `${year}`;
+<script>
+  import Swal from "sweetalert2";
+
+  const data = "info@panambi.net";
+  const btnMail = document.getElementById("mail");
+
+  btnMail?.addEventListener("click", () => {
+    copyToClipboard(data);
+    Swal.fire({
+      title: "Mail copiado con exito",
+      icon: "success",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  });
+
+  function copyToClipboard(data: string) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard
+        .writeText(data)
+        .then(() => {
+          console.log("Text copied to clipboard");
+        })
+        .catch((err) => {
+          console.error("Could not copy text: ", err);
+        });
+    } else {
+      // Fallback for older browsers
+      const mailCopied = document.createElement("input");
+      mailCopied.setAttribute("value", data);
+      document.body.appendChild(mailCopied);
+      mailCopied.select();
+      document.execCommand("copy");
+      document.body.removeChild(mailCopied);
+    }
+  }
 </script>

@@ -1,0 +1,43 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  name: string;
+  link: string;
+  profile: string;
+}
+
+const { title, description, name, link, profile } = Astro.props;
+---
+
+<div
+  class="h-[360px] max-w-[320px] p-6 bg-white rounded-[45px] shadow-card border border-zinc-900 flex-col justify-start items-start gap-2.5 inline-flex text-black"
+>
+  <div class="flex-col justify-start items-start gap-7 flex">
+    <div class="justify-start items-start">
+      <div class="justify-between items-center flex w-full gap-4">
+        <div class="w-1/2 left-0 top-0 relative">
+          <img
+            src={profile}
+            alt={name}
+          />
+        </div>
+        <div class="flex-col justify-end items-start inline-flex">
+          <div class="text-lg font-normal">{title}</div>
+          <div class="text-xl font-medium">{name}</div>
+        </div>
+      </div>
+      <!-- <a
+        class="top-0 right-0"
+        href={link}
+      >
+        <img
+          src="/team/lng.svg"
+          alt="vector"
+        />
+      </a> -->
+    </div>
+    <hr class="w-full border border-black" />
+    <p class="text-sm md:text-lg">{description}</p>
+  </div>
+</div>

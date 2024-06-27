@@ -1,0 +1,28 @@
+---
+import dataClientes from "./Data/clientes.json";
+import Container from "./shared/Container.astro";
+---
+
+<span id="clientes"></span>
+<Container>
+  <div class="flex-row items-center">
+    <div
+      class=`grid grid-cols-2 md:grid-cols-${dataClientes.length / 2} lg:grid-cols-${dataClientes.length} place-items-center `
+    >
+      {
+        dataClientes.map((client) => (
+          <div class="p-2 grayscale transition duration-200 hover:grayscale-0">
+            <img
+              src={client.image}
+              class="h-12 w-auto  "
+              loading="lazy"
+              alt={client.name}
+              width=""
+              height=""
+            />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</Container>
