@@ -7,7 +7,7 @@ import Container from "./shared/Container.astro";
 <Container>
   <div class="flex-row items-center">
     <div
-      class=`grid grid-cols-2 lg:grid-cols-${(dataClientes.length) / 2} lg:grid-cols-${dataClientes.length} place-items-center `
+      class="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-8 place-items-center"
     >
       {
         dataClientes.map((client) => (
