@@ -150,7 +150,8 @@ const dataClientes = [
 ];
 
 const $$Clientes = createComponent(($$result, $$props, $$slots) => {
-  return renderTemplate`${maybeRenderHead()}<span id="clientes"></span> ${renderComponent($$result, "Container", $$Container, {}, { "default": ($$result2) => renderTemplate` <div class="flex-row items-center"> <div${addAttribute(`grid grid-cols-2 md:grid-cols-${dataClientes.length / 2} lg:grid-cols-${dataClientes.length} place-items-center`, "class")}> ${dataClientes.map((client) => renderTemplate`<div class="p-2 grayscale transition duration-200 hover:grayscale-0"> <img${addAttribute(client.image, "src")} class="h-12 w-auto  " loading="lazy"${addAttribute(client.name, "alt")} width="" height=""> </div>`)} </div> </div> ` })}`;
+  console.log(dataClientes.length);
+  return renderTemplate`${maybeRenderHead()}<span id="clientes"></span> ${renderComponent($$result, "Container", $$Container, {}, { "default": ($$result2) => renderTemplate` <div class="flex-row items-center"> <div${addAttribute(`grid grid-cols-2 lg:grid-cols-${dataClientes.length / 2} lg:grid-cols-${dataClientes.length} place-items-center`, "class")}> ${dataClientes.map((client) => renderTemplate`<div class="p-2 grayscale transition duration-200 hover:grayscale-0"> <img${addAttribute(client.image, "src")} class="h-12 w-auto  " loading="lazy"${addAttribute(client.name, "alt")} width="" height=""> </div>`)} </div> </div> ` })}`;
 }, "D:/webs/Panambi_Landing/src/components/Clientes.astro", void 0);
 
 const $$Index = createComponent(($$result, $$props, $$slots) => {
