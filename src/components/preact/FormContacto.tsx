@@ -74,37 +74,41 @@ const FormContacto = () => {
                     onSubmit={submit}
                     className="space-y-8 lg:w-full"
                 >
-                    <div className="flex">
-                        <div className="flex items-center me-4">
+                    <div className="flex justify-between md:justify-start items-center gap-8 w-full">
+
+                        <div className="flex items-center ">
                             <input
                                 id="AgendarReunion"
                                 type="radio"
                                 value="Agendar Reunion"
-                                name="AgendarReunion"
-                                className="w-4 h-4 bg-black border-black"
+                                name="motivo"
+                                className="w-4 h-4 "
                             />
                             <label
                                 for="AgendarReunion"
-                                className="ms-2 text-base font-medium text-black"
+                                className="ms-2 text-base xl:text-lg font-medium text-black"
                             >Agenda una reunión
                             </label>
+
                         </div>
-                        <div className="flex items-center me-4 mx-8 md:mx-20">
+
+                        <div className="flex items-center justify-center ">
                             <input
                                 id="ObtenerPropuesta"
                                 type="radio"
                                 value="Obtener Propuesta"
-                                name="ObtenerCotizacion"
-                                className="w-4 h-4 bg-black border-black"
+                                name="motivo"
+                                className="w-4 h-4 "
                             />
                             <label
                                 for="ObtenerPropuesta"
-                                className="ms-2 text-base font-medium text-black"
+                                className="ms-2 text-base xl:text-lg font-medium text-black"
                             >Obtene tu propuesta
                             </label>
                         </div>
+
                     </div>
-                    <div className="focus:ring-lime active:ring-lime target:ring-lime">
+                    <div>
                         <label
                             for="nombre"
                             className="block mb-2 text-base font-medium text-black"
@@ -113,7 +117,7 @@ const FormContacto = () => {
                         <input
                             type="text"
                             id="nombre"
-                            className="shadow-sm bg-white border text-black text-base rounded-lg block w-full p-2.5 outline-none focus:border-2 focus:border-violeta-100 caret-violeta-100"
+                            className="shadow-sm bg-white border border-violeta-200 text-black text-base rounded-lg block w-full p-2.5 outline-none focus:border-2 focus:border-violeta-100 caret-violeta-100"
                             placeholder="Nombre"
                             name="nombre"
                             required
@@ -129,7 +133,7 @@ const FormContacto = () => {
                         <input
                             type="number"
                             id="telefono"
-                            className="shadow-sm bg-white border text-black text-base rounded-lg block w-full p-2.5 outline-none focus:border-2 focus:border-violeta-100 caret-violeta-100"
+                            className="shadow-sm bg-white border border-violeta-200 text-black text-base rounded-lg block w-full p-2.5 outline-none focus:border-2 focus:border-violeta-100 caret-violeta-100"
                             placeholder="Telefono"
                             name="telefono"
                             required
@@ -144,7 +148,7 @@ const FormContacto = () => {
                         <input
                             type="email"
                             id="email"
-                            className="shadow-sm bg-white border text-black text-base rounded-lg block w-full p-2.5 outline-none focus:border-2 focus:border-violeta-100 caret-violeta-100"
+                            className="shadow-sm bg-white border border-violeta-200 text-black text-base rounded-lg block w-full p-2.5 outline-none focus:border-2 focus:border-violeta-100 caret-violeta-100"
                             placeholder="Email"
                             name="email"
                             required
@@ -159,13 +163,13 @@ const FormContacto = () => {
                         <textarea
                             id="mensaje"
                             rows={6}
-                            className="shadow-sm bg-white border text-black text-base rounded-lg block w-full p-2.5 outline-none focus:border-2 focus:border-violeta-100 caret-violeta-100"
+                            className="shadow-sm bg-white border border-violeta-200 text-black text-base rounded-lg block w-full p-2.5 outline-none focus:border-2 focus:border-violeta-100 caret-violeta-100"
                             placeholder="Mensaje"
                             name="mensaje"
                         ></textarea>
                     </div>
                     <div className="w-full grid place-items-center">
-                        <button class="cssbuttons-io-button">
+                        <button class="cssbuttons-io-button w-[90%] lg:w-[65%] xl:w-[50%] ">
                             <h2 class="text-center font-semibold text-xl leading-7">Enviar Consulta</h2>
 
                             <div class="icon">

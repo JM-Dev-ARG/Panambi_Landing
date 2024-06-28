@@ -8,8 +8,7 @@ export const POST: APIRoute = async ({ request }) => {
   const email = data.get("email");
   const tel = data.get("telefono");
   const msj = data.get("mensaje");
-  const obtenerPropuesta = data.get("ObtenerPropuesta");
-  const agendarReunion = data.get("AgendarReunion");
+  const motivo = data.get("motivo");
 
   const mailOptions = {
     from: import.meta.env.GMAIL_USER,
@@ -20,8 +19,8 @@ export const POST: APIRoute = async ({ request }) => {
       Email: ${email}
       Telefono: ${tel}
       Mensaje: ${msj}
-      ObtenerPropuesta: ${obtenerPropuesta}
-      AgendarReunion: ${agendarReunion}`,
+      Motivo del contacto: ${motivo}
+    `,
   };
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
