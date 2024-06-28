@@ -166,20 +166,10 @@ const FormContacto = () => {
                     </div>
                     <div className="w-full grid place-items-center">
                         <button class="cssbuttons-io-button">
-                            Enviar Consulta
+                            <h2 class="text-center font-semibold text-xl leading-7">Enviar Consulta</h2>
+
                             <div class="icon">
-                                <svg
-                                    height="24"
-                                    width="24"
-                                    viewBox="0 0 24 24"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path d="M0 0h24v24H0z" fill="none"></path>
-                                    <path
-                                        d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
-                                        fill="currentColor"
-                                    ></path>
-                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-mail-fast"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M3 7h3" /><path d="M3 11h2" /><path d="M9.02 8.801l-.6 6a2 2 0 0 0 1.99 2.199h7.98a2 2 0 0 0 1.99 -1.801l.6 -6a2 2 0 0 0 -1.99 -2.199h-7.98a2 2 0 0 0 -1.99 1.801z" /><path d="M9.8 7.5l2.982 3.28a3 3 0 0 0 4.238 .202l3.28 -2.982" /></svg>
                             </div>
                         </button>
                     </div>
