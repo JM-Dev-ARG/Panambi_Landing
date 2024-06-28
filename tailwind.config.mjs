@@ -40,8 +40,10 @@ export default {
 				}
 			},
 			boxShadow: {
-				'card': '0px 5px 0px 0px #191A23'
+				'card': '0px 5px 0px 0px #191A23',
+				'btn': '0px 5px 0px 0px #857993'
 			},
+
 			fontFamily: {
 				Poppins: ['Poppins']
 			},

@@ -1,4 +1,5 @@
 import Swal from "sweetalert2";
+import "./fomrContacto.css";
 
 // verificar viewport
 const isMobile = window.matchMedia("(max-width: 430px)").matches;
@@ -163,15 +164,27 @@ const FormContacto = () => {
                             name="mensaje"
                         ></textarea>
                     </div>
-                    <button
-                        className="group w-full py-5 bg-violeta-100 hover:bg-violeta-200 transition-all duration-300 text-white hover:text-black rounded-[14px] justify-center gap-2.5 inline-flex"
-                    >
-                        <div
-                            className="text-center text-xl font-normal leading-7 group-hover:font-semibold group-hover:transition-all group-hover:duration-75"
-                        >
-                            Enviar consulta
-                        </div>
-                    </button>
+                    <div className="w-full grid place-items-center">
+                        <button class="cssbuttons-io-button">
+                            Enviar Consulta
+                            <div class="icon">
+                                <svg
+                                    height="24"
+                                    width="24"
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path d="M0 0h24v24H0z" fill="none"></path>
+                                    <path
+                                        d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                                        fill="currentColor"
+                                    ></path>
+                                </svg>
+                            </div>
+                        </button>
+                    </div>
+
+
                 </form>
             </div>
             <div className="hidden lg:flex lg:justify-end lg:w-4/12 lg:py-2">

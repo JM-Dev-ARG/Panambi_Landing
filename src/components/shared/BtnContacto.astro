@@ -7,9 +7,56 @@ const { texto } = Astro.props;
 ---
 
 <a
-  class="px-9 py-5 bg-violeta-100 hover:bg-violeta-200 text-white hover:text-black rounded-2xl justify-items-center md:justify-items-start gap-2.5 inline-flex transition-all duration-300"
-  rel="noopener noreferrer"
+  class="ov-btn-slide-left"
   href="#contacto"
 >
-  <h2 class="text-center text-xl font-normal leading-7">{texto}</h2>
+  <h2 class="text-center font-semibold text-xl leading-7">{texto}</h2>
 </a>
+
+<style>
+  a {
+    text-decoration: none;
+  }
+
+  .ov-btn-slide-left {
+    background: #fff;
+    color: #6b4494;
+    border: 2px solid #6b4494;
+    padding: 16px 20px;
+    border-radius: 14px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+  }
+
+  .ov-btn-slide-left:hover h2 {
+    color: #fff;
+  }
+
+  .ov-btn-slide-left::after {
+    content: "";
+    width: 120%;
+    background: #6b4494;
+    position: absolute;
+    border: solid 20px #6b4494;
+    z-index: -1;
+    padding: 16px 20px;
+    display: block;
+    top: -5px;
+    bottom: -5px;
+    left: -120%;
+    right: 100%;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+  }
+
+  .ov-btn-slide-left:hover::after {
+    left: -10%;
+    right: 0;
+    top: -5px;
+    bottom: -5px;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+  }
+</style>
