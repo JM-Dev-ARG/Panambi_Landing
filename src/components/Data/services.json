@@ -7,7 +7,7 @@
         "background": "#F3F3F3",
         "arrow": "./services/ag.svg",
         "link": "./",
-        "image": "./services/03.svg"
+        "image": "./services/social.avif"
     },
     {
         "id": 2,
@@ -17,7 +17,7 @@
         "background": "#d2df8a",
         "arrow": "./services/ag.svg",
         "link": "./",
-        "image": "./services/01.svg"
+        "image": "./services/desarrollo.avif"
     },
     {
         "id": 3,
@@ -27,7 +27,7 @@
         "background": "black ",
         "arrow": "./services/aw.svg",
         "link": "./",
-        "image": "./services/04.svg"
+        "image": "./services/email_mkt.avif"
     },
     {
         "id": 4,
@@ -37,6 +37,6 @@
         "background": "#aa8abf",
         "arrow": "./services/ag.svg",
         "link": "./",
-        "image": "./services/05.svg"
+        "image": "./services/content.avif"
     }
 ]

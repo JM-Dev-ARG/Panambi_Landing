@@ -14,21 +14,29 @@ import BtnContacto from "./shared/BtnContacto.astro";
       description=" Nuestras soluciones de marketing digital a la medida, ayudan a tus negocios a crecer y a superar todos los objetivos"
     />
 
-    <div class="flex-row items-center py-5 lg:mb-14">
+    <div class="w-full flex-row py-5 lg:mb-14">
       <div
-        class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-12"
+        class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-12"
       >
         <!-- card start-->
         {
           servicesData.map(
-            ({
-              background,
-              name1,
-              name2,
-              /*  arrow, link, */ image,
-              textColor,
-            }) => (
+            (
+              {
+                background,
+                name1,
+                name2,
+                /*  arrow, link, */ image,
+                textColor,
+              },
+              index
+            ) => (
               <ServiceCard
+                className={
+                  index % 2 == 0
+                    ? "lg:justify-self-end"
+                    : "lg:justify-self-start"
+                }
                 textColor={textColor}
                 background={background}
                 name1={name1}
@@ -72,3 +80,18 @@ import BtnContacto from "./shared/BtnContacto.astro";
     </div>
   </div></Container
 >
+<style>
+  .serviceCardContainer {
+    place-items: center;
+  }
+
+  @media (min-width: 1024px) {
+    .serviceCardContainer:nth-child(2) {
+      place-items: center;
+    }
+
+    .serviceCardContainer:nth-child(1) {
+      place-items: end;
+    }
+  }
+</style>

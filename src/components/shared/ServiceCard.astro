@@ -7,29 +7,29 @@ export interface Props {
   /* arrow?: string;
   link?: string; */
   image: string;
+  className?: string;
 }
 
-const { background, name1, name2, /*  arrow, link, */ image, textColor } =
-  Astro.props;
+const {
+  background,
+  name1,
+  name2,
+  /*  arrow, link, */ image,
+  textColor,
+  className,
+} = Astro.props;
 ---
 
 <div
   style={`background-color: ${background};`}
-  class=`h-[310px] p-6 md:p-12 rounded-[45px] shadow-card border border-black justify-between items-center flex ${textColor}`
+  class=`h-[310px] max-w-[600px] w-full p-6 md:p-12 rounded-[45px] shadow-card border border-black ${textColor} relative ${className}`
 >
-  <div class="flex-col justify-center items-start gap-[93px] inline-flex">
-    <div class="flex-col justify-start items-start flex">
-      <div
-        class="px-[7px] rounded-[7px] flex-col justify-start items-start gap-2.5 flex"
-      >
-        <div class="text-3xl font-medium">{name1}</div>
-      </div>
-      <div
-        class="px-[7px] rounded-[7px] flex-col justify-start items-start gap-2.5 flex"
-      >
-        <div class="text-3xl font-medium">{name2}</div>
-      </div>
-    </div>
+  <div class="h-full inline-flex flex-col justify-end items-start gap-[93px]">
+    <span
+      ><p class="text-3xl font-medium">{name1}</p>
+      <p class="text-3xl font-medium">{name2}</p></span
+    >
+
     {
       /*                   <a
                     class="justify-start items-center gap-[15px] inline-flex"
@@ -46,7 +46,7 @@ const { background, name1, name2, /*  arrow, link, */ image, textColor } =
     }
   </div>
   <div
-    class="w-[210px] h-[170px] pt-0.5 pb-[1.95px] justify-center items-center flex"
+    class="absolute -top-10 left-[100px] md:left-[300px] lg:left-[160px] xl:left-[300px] max-w-[320px] md:w-[320px]"
   >
     <img src={image} />
   </div>
