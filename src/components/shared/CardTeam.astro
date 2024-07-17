@@ -13,16 +13,20 @@ const { title, description, name, /* link, */ profile } = Astro.props;
 <div
   class="h-[360px] max-w-[320px] p-6 bg-white rounded-[45px] shadow-card border border-zinc-900 flex-col justify-start items-start gap-2.5 inline-flex text-black"
 >
-  <div class="flex-col justify-start items-start gap-7 flex">
+  <div class="flex-col justify-start items-start gap-5 flex">
     <div class="justify-start items-start">
-      <div class="justify-between items-center flex w-full gap-4">
-        <div class="w-1/2 left-0 top-0 relative">
-          <img
+      <div class="h-[100px] justify-between items-center flex w-full gap-4">
+        <div
+          style={{ backgroundImage: `url(${profile})` }}
+          class="w-[90px] h-[100px] bg-cover bg-center customBorder"
+        >
+          <!-- <img
+            class="object-cover w-full h-full object-center customColor"
             src={profile}
             alt={name}
-          />
+          /> -->
         </div>
-        <div class="flex-col justify-end items-start inline-flex">
+        <div class="w-[60%] flex-col justify-end items-start inline-flex">
           <div class="text-lg font-normal">{title}</div>
           <div class="text-xl font-medium">{name}</div>
         </div>
@@ -37,7 +41,17 @@ const { title, description, name, /* link, */ profile } = Astro.props;
         />
       </a> -->
     </div>
-    <hr class="w-full border border-black" />
+    <span class="w-full border border-black"></span>
     <p class="text-sm md:text-lg">{description}</p>
   </div>
 </div>
+
+<style>
+  .customBorder {
+    overflow: hidden;
+    background-color: brown;
+    border-radius: 33% 67% 38% 62% / 70% 35% 65% 30%;
+    border-image: fill 1
+      linear-gradient(0deg, #aa8abf41 100%, rgba(255, 255, 255, 0) 100%);
+  }
+</style>

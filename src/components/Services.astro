@@ -16,7 +16,7 @@ import BtnContacto from "./shared/BtnContacto.astro";
 
     <div class="w-full flex-row py-5 lg:mb-14">
       <div
-        class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-12"
+        class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-12 place-items-center"
       >
         <!-- card start-->
         {
@@ -51,29 +51,27 @@ import BtnContacto from "./shared/BtnContacto.astro";
     </div>
 
     <div
-      class="flex-row items-center my-6 p-5 md:p-14 bg-zinc-200 rounded-[45px]"
+      class="flex-row relative items-center my-6 p-5 md:p-14 bg-zinc-200 rounded-[45px]"
     >
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div class="justify-start items-center gap-[275px] flex">
           <div
             class="flex-col justify-start items-start gap-[26px] inline-flex text-black"
           >
-            <div class="text-3xl font-medium">
-              Hagamos que las cosas ocurran
-            </div>
+            <div class="text-3xl font-medium">Hagamos que ocurra.💪​</div>
             <div class="text-lg font-normal">
               Contactanos hoy para conocer mas sobre como nuestros servicios de
-              marketing digital puede ayudar a tu negocio a crecer y tener
-              extito en linea.
+              marketing digital puede ayudar a tu negocio a despegar.
             </div>
             <BtnContacto texto="Obtene tu cotización gratis" />
           </div>
         </div>
-        <div class="hidden md:grid justify-items-center -m-20">
+        <div
+          class="hidden md:grid md:absolute -top-10 left-[45%] w-[500px] md:w-[450px] lg:left-[60%] lg:-top-20"
+        >
           <img
-            src="/services/Illustration.svg"
-            width="50%"
-            alt="cat"
+            src="/services/rocket.avif"
+            alt="Cohete disparando"
           />
         </div>
       </div>

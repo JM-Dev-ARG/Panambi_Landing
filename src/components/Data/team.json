@@ -1,31 +1,31 @@
 {
     "team": [
         {
-            "title": "CEO and Founder",
-            "name": "John Smith",
+            "title": "CEO & Founder",
+            "name": "Micaela Tissieres",
             "description": "10+ years of experience in digital marketing. Expertise in SEO, PPC, and content strategy",
-            "profile": "/team/c1.png",
+            "profile": "/img_perfiles/juan_perfil.avif",
             "link": "/"
         },
         {
-            "title": "Director of Operations",
-            "name": "Jane Doe",
-            "description": "7+ years of experience in project management and team leadership. Strong organizational and communication skills",
-            "profile": "/team/c2.png",
+            "title": "Web Developer",
+            "name": "Juan Manuel Martinez",
+            "description": "Fullstack developer, con experiencia en interfaces web interactivas y atractivas. Me enfoco en crear experiencias de usuario intuitivas y de alto impacto visual.",
+            "profile": "/img_perfiles/juan_perfil.avif",
             "link": "/"
         },
         {
-            "title": "Senior SEO Specialist",
-            "name": "Michael Brown",
+            "title": "Social Media Copywriter",
+            "name": "Carola Marquez",
             "description": "5+ years of experience in SEO and content creation. Proficient in keyword research and on-page optimization",
-            "profile": "/team/c3.png",
+            "profile": "/img_perfiles/carola_perfil.avif",
             "link": "/"
         },
         {
-            "title": "Senior SEO Specialist",
-            "name": "Michael Brown",
+            "title": "Social Media Designer",
+            "name": "Pilar Sendra",
             "description": "5+ years of experience in SEO and content creation. Proficient in keyword research and on-page optimization",
-            "profile": "/team/c3.png",
+            "profile": "/img_perfiles/pili_perfil.avif",
             "link": "/"
         }
     ],
