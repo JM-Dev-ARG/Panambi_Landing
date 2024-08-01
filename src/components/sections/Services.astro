@@ -1,18 +1,17 @@
 ---
-import Container from "./shared/Container.astro";
-import Topic from "./shared/Topic.astro";
-import servicesData from "./Data/services.json";
-import ServiceCard from "./shared/ServiceCard.astro";
-import BtnContacto from "./shared/BtnContacto.astro";
+import Container from "../shared/Container.astro";
+import Topic from "../shared/Topic.astro";
+import servicesData from "../Data/services.json";
+import ServiceCard from "../shared/ServiceCard.astro";
+import BtnContacto from "../shared/BtnContacto.astro";
 ---
 
 <span id="servicios"></span>
 <Container>
   <div class="relative flex flex-col items-center">
-    <Topic
-      title="Servicios"
-      description=" Nuestras soluciones de marketing digital a la medida, ayudan a tus negocios a crecer y a superar todos los objetivos"
-    />
+    <div class="w-full">
+      <Topic title="Servicios" />
+    </div>
 
     <div class="w-full flex-row py-5 lg:mb-14">
       <div
@@ -58,10 +57,10 @@ import BtnContacto from "./shared/BtnContacto.astro";
           <div
             class="flex-col justify-start items-start gap-[26px] inline-flex text-black"
           >
-            <div class="text-3xl font-medium">Hagamos que ocurra.💪​</div>
+            <!--  <div class="text-3xl font-medium">Hagamos que ocurra.💪​</div> -->
             <div class="text-lg font-normal">
-              Contactanos hoy para conocer mas sobre como nuestros servicios de
-              marketing digital puede ayudar a tu negocio a despegar.
+              Para vender seguros por internet se necesita planificación,
+              tecnología y mentalidad de negocios.
             </div>
             <BtnContacto texto="Agenda una reunión" />
           </div>

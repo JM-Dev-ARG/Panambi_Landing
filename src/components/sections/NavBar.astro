@@ -1,0 +1,320 @@
+---
+import Nombre from "../Icons/Nombre.astro";
+import CloseSVG from "../svgIcons/CloseSVG.astro";
+import MenuSVG from "../svgIcons/MenuSVG.astro";
+
+const navLinks = [
+  { href: "/#servicios", label: "Servicios" },
+  { href: "/#equipo", label: "Team" },
+  { href: "/#clientes", label: "Clientes" },
+  { href: "/#contacto", label: "Contacto" },
+];
+---
+
+<nav
+  class="w-full flex justify-center items-center fixed lg:top-3 z-[100] transition-all duration-300"
+>
+  <div
+    id="navbar"
+    class="bg-transparent scrollanimation navbar-animation w-full lg:w-[80%] xl:w-[60%] lg:rounded-[16px] transition-all duration-300"
+  >
+    <div class="items-center max-w-screen-2xl mx-auto lg:flex lg:px-6">
+      <div
+        class="flex items-center justify-between m-auto px-4 lg:px-0 py-3 lg:py-4 lg:block z-10"
+      >
+        <a
+          href="/#inicio"
+          class="relative flex items-center gap-3"
+        >
+          <div class="inline-flex gap-2 justify-center items-center">
+            <Nombre className="h-9 lg:h-10 w-auto flex gap-2" />
+          </div>
+        </a>
+
+        <button
+          id="menu-toggle"
+          class="outline-none lg:hidden w-auto flex items-cente justify-center h-full"
+        >
+          <MenuSVG
+            className=""
+            currenteColor="black"
+          />
+          <CloseSVG className="hidden" />
+        </button>
+      </div>
+
+      <div
+        id="menu"
+        class="absolute w-full lg:static lg:flex flex-col lg:flex-row lg:justify-between lg:items-center -top-[1000px] transition-all duration-300 opacity-0 lg:opacity-100 lg:top-6 lg:gap-4 -z-10 lg:z-0 bg-transparent h-dvh lg:h-auto"
+      >
+        <button
+          id="menu-toggle2"
+          class="text-white outline-none lg:hidden w-full h-1/4 lg:h-auto flex justify-end mt-7 mr-7"
+        >
+          <CloseSVG />
+        </button>
+
+        <div
+          id="navLinksResponsive"
+          class="relative -top-80 lg:static lg:pb-0 lg:mt-0 lg:w-full lg:justify-center h-3/4 lg:h-auto"
+        >
+          <ul
+            class="text-center justify-center items-center space-y-4 lg:flex lg:space-x-6 lg:space-y-0"
+          >
+            {
+              navLinks.map((item) => {
+                return (
+                  <>
+                    {/* //navegador web */}
+
+                    <li class="hidden lg:block group lg:text-lg  font-medium textAnimation">
+                      <a
+                        class="block py-2 px-3 text-black rounded md:bg-transparent md:p-0 hover:text-violeta-200 "
+                        href={item.href}
+                      >
+                        {item.label}
+                      </a>
+
+                      <div class="hidden md:block md:opacity-0 md:w-0 md:border-t-[3px] md:border-violeta-200 md:group-hover:w-full md:group-hover:opacity-100 md:duration-200 md:ease-linear">
+                        {" "}
+                      </div>
+                    </li>
+
+                    {/* //navegador tablet y movil */}
+
+                    <li class=" lg:hidden group text-pesceBlack-950  font-semibold ">
+                      <a href={item.href}>{item.label}</a>
+                    </li>
+                  </>
+                );
+              })
+            }
+          </ul>
+
+          {/* //boton nav movil */}
+          <div class="text-center grid place-items-center mt-3 lg:hidden">
+            <div
+              class="lg:hidden w-[200px] block lg:w-auto rounded-r-2xl rounded-tl-2xl border border-[#b6bbbcff] bg-white overflow-hidden"
+              id="navbar-default"
+            >
+              <div
+                class="m-[3px] rounded-r-xl rounded-tl-xl bg-[#79ba80ff] hover:bg-[#598d5e] transition-all duration-300"
+              >
+                <a
+                  class="px-4 py-2 text-white inline-flex"
+                  aria-label="Link para mensaje directo al Wathsapp Agencia Panambi"
+                  href="https://wa.me/5491131664971?text=Hola, quiero hacerles una consulta"
+                  target="_blank"
+                  ><h2 class="text-center text-base font-normal leading-7">
+                    Contacto
+                  </h2>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* //boton nav tablet y web */}
+        <div
+          class="text-center lg:grid place-items-center mt-3 lg:mt-0 hidden lg:static"
+        >
+          <div
+            class="hidden w-full lg:block lg:w-auto rounded-r-2xl rounded-tl-2xl border border-[#b6bbbcff] bg-white overflow-hidden"
+            id="navbar-default"
+          >
+            <div
+              class="m-[3px] rounded-r-xl rounded-tl-xl bg-[#79ba80ff] hover:bg-[#598d5e] transition-all duration-300"
+            >
+              <a
+                class="px-4 py-2 text-white inline-flex"
+                aria-label="Link para mensaje directo al Wathsapp Agencia Panambi"
+                href="https://wa.me/5491131664971?text=Hola, quiero hacerles una consulta"
+                target="_blank"
+                ><h2 class="text-center text-base font-normal leading-7">
+                  Contacto
+                </h2>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<style>
+  .textAnimation {
+    color: white;
+    transition-duration: 0.3s;
+  }
+
+  .textAnimation:hover {
+    color: #3d3d3d;
+    transition-duration: 0.3s;
+  }
+
+  .borderAnimation {
+    border-color: #3d3d3d;
+    transition-duration: 0.3s;
+  }
+
+  .btnAnimation {
+    color: white;
+    border-color: #d1d1d1;
+    transition-duration: 0.3s;
+  }
+
+  .btnAnimation:hover {
+    color: #3d3d3d;
+    border-color: #3d3d3d;
+  }
+
+  .showNavbar {
+    top: 0px;
+    background-color: #f6f6f6;
+    z-index: 10;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* animacion con css y scroll */
+  /*   .scrollanimation,
+  .textAnimation,
+  .textAnimation:hover,
+  .borderAnimation,
+  .btnAnimation,
+  .btnAnimation:hover {
+    animation-timeline: scroll();
+    animation-range: 0 150px;
+    animation-fill-mode: both;
+    animation-duration: 1ms;
+    animation-timing-function: linear;
+  }
+  .scrollanimation {
+    animation-name: navbarAnimation;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .textAnimation {
+    color: white;
+    transition-duration: 0.3s;
+  }
+
+  .textAnimation:hover {
+    color: #3d3d3d;
+    transition-duration: 0.3s;
+    animation-name: hoverAnimation;
+  }
+
+  .borderAnimation {
+    border-color: #3d3d3d;
+    transition-duration: 0.3s;
+    animation-name: borderAnimation;
+  }
+
+  .btnAnimation {
+    color: white;
+    border-color: #d1d1d1;
+    transition-duration: 0.3s;
+  }
+
+  .btnAnimation:hover {
+    color: #3d3d3d;
+    border-color: #3d3d3d;
+    animation-name: btnHoverAnimation;
+  }
+
+  @keyframes navbarAnimation {
+    to {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  .showNavbar {
+    top: 0px;
+    background-color: #f6f6f6;
+    z-index: 10;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .close {
+    display: none;
+    opacity: 0;
+  }
+
+  .open {
+    display: block;
+    opacity: 1;
+  } */
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuSVG = document.querySelector(
+      "#menu-toggle svg:first-child"
+    ) as SVGElement;
+    const closeSVG = document.querySelector(
+      "#menu-toggle svg:last-child"
+    ) as SVGElement;
+    const toggle = document.getElementById("menu-toggle") as HTMLButtonElement;
+    const menu = document.getElementById("menu") as HTMLElement;
+    const toggle2 = document.getElementById(
+      "menu-toggle2"
+    ) as HTMLButtonElement;
+    const navbar = document.getElementById("navbar") as HTMLElement;
+    const navLinks = document.querySelectorAll(
+      "#navLinksResponsive a"
+    ) as NodeListOf<HTMLAnchorElement>;
+    const navLinksResponsive = document.getElementById(
+      "navLinksResponsive"
+    ) as HTMLElement;
+
+    window.addEventListener("scroll", () => {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      if (scrollTop > 0) {
+        navbar.classList.add("bg-[#f9f9f9]");
+      } else {
+        navbar.classList.remove("bg-[#f9f9f9]");
+      }
+    });
+
+    toggle.onclick = () => {
+      navbar.classList.remove("fixed");
+      menu.classList.toggle("showNavbar");
+      menu.classList.contains("showNavbar")
+        ? (menuSVG.classList.toggle("hidden"),
+          closeSVG.classList.remove("hidden"),
+          navLinksResponsive.classList.remove("-top-80"),
+          navbar.classList.add("fixed"))
+        : (menuSVG.classList.remove("hidden"),
+          navLinksResponsive.classList.add("-top-80"),
+          closeSVG.classList.toggle("hidden"));
+    };
+
+    toggle2.onclick = () => {
+      menu.classList.toggle("showNavbar");
+      if (menu.classList.contains("showNavbar")) {
+        menuSVG.classList.add("hidden");
+        closeSVG.classList.remove("hidden");
+      } else {
+        menuSVG.classList.remove("hidden");
+        closeSVG.classList.add("hidden");
+      }
+    };
+
+    navLinks.forEach((link) => {
+      link.onclick = () => {
+        menu.classList.remove("showNavbar");
+        menuSVG.classList.remove("hidden");
+        closeSVG.classList.add("hidden");
+      };
+    });
+  });
+</script>

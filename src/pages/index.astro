@@ -1,15 +1,21 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Hero from "../components/Hero.astro";
-import Services from "../components/Services.astro";
-import Team from "../components/Team.astro";
-import Contact from "../components/Contact.astro";
-import Clientes from "../components/Clientes.astro";
+import Hero from "../components/sections/Hero.astro";
+import Services from "../components/sections/Services.astro";
+import Team from "../components/sections/Team.astro";
+import Contact from "../components/sections/Contact.astro";
+import Clientes from "../components/sections/Clientes.astro";
+import NavBar from "../components/sections/NavBar.astro";
+import Banner from "../components/sections/Banner.astro";
 ---
 
-<Layout title="Positivus">
-  <main class="space-y-20 overflow-hidden">
+<Layout title="Panambi">
+  <NavBar />
+  <header>
     <Hero />
+  </header>
+  <main class="space-y-20 overflow-hidden">
+    <Banner />
     <Services />
     <Team />
     <Clientes />

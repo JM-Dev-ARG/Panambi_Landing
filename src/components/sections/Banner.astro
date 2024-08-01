@@ -1,0 +1,24 @@
+---
+import BannerItem from "../shared/BannerItem.astro";
+import Container from "../shared/Container.astro";
+
+const texto = [
+  {
+    texto: "Consultoría estratégica",
+  },
+  {
+    texto: "Transformación digital",
+  },
+  {
+    texto: "Marketing de contenidos",
+  },
+];
+---
+
+<Container className="grid place-items-center">
+  <span class="border-b-[3px] border-violet-500 w-[60%] mt-10"></span>
+  <div class="flex justify-center items-center gap-6 my-8">
+    {texto.map((text) => <BannerItem text={text.texto} />)}
+  </div>
+  <span class="border-t-[3px] border-violet-500 w-[60%]"></span>
+</Container>

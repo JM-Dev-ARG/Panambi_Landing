@@ -1,8 +1,8 @@
 [
     {
         "id": 1,
-        "name1": "Social Media",
-        "name2": "Marketing",
+        "name1": "Estrategia de",
+        "name2": "Marketing y Negocios",
         "textColor": "text-black",
         "background": "#F3F3F3",
         "arrow": "./services/ag.svg",
@@ -12,7 +12,7 @@
     {
         "id": 2,
         "name1": "Desarrollo",
-        "name2": "Web",
+        "name2": "Web y Apps.",
         "textColor": "text-black",
         "background": "#d2df8a",
         "arrow": "./services/ag.svg",
@@ -21,7 +21,7 @@
     },
     {
         "id": 3,
-        "name1": "Email",
+        "name1": "Inbound",
         "name2": "Marketing",
         "textColor": "text-white",
         "background": "black ",
@@ -31,8 +31,8 @@
     },
     {
         "id": 4,
-        "name1": "Content",
-        "name2": "Creation",
+        "name1": "Marketing de",
+        "name2": "Contenidos",
         "textColor": "text-black",
         "background": "#aa8abf",
         "arrow": "./services/ag.svg",

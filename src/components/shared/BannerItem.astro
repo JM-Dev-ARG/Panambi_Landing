@@ -1,0 +1,25 @@
+---
+export interface Props {
+  className?: string;
+  text: string;
+  textColor?: string;
+}
+
+const { className, text, textColor } = Astro.props;
+---
+
+<div class=`flex items-center justify-center gap-1 ${className} ${textColor}`>
+  <img
+    class="img"
+    src="./img/tilde.avif"
+    alt=""
+  />
+  <p class="text-2xl font-semibold">{text}</p>
+</div>
+
+<style>
+  .img {
+    height: 40px;
+    mix-blend-mode: darken;
+  }
+</style>
