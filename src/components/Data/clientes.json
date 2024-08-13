@@ -1,42 +1,42 @@
 [
     {
         "id": 1,
-        "name": "cliente 01 logo",
-        "image": "./clients/01.svg"
+        "name": "RPP Pesce Seguros Logo",
+        "image": "./clients/logo_pesce.avif",
+        "link": "https://pesceseguros.com/"
     },
     {
         "id": 2,
-        "name": "cliente 02 logo",
-        "image": "./clients/02.svg"
+        "name": "Planifica Mejor Logo",
+        "image": "./clients/logo_PM.avif",
+        "link": "https://planificamejor.com.ar/"
     },
     {
         "id": 3,
-        "name": "cliente 03 logo",
-        "image": "./clients/03.svg"
+        "name": "Juan Pablo Araoz Logo",
+        "image": "./clients/logo_araoz.avif",
+        "link": "https://jparaoz.com/"
     },
     {
         "id": 4,
-        "name": "cliente 04 logo",
-        "image": "./clients/04.svg"
+        "name": "Belt Seguros Logo",
+        "image": "./clients/logo_belt.avif",
+        "link": "https://www.beltseguros.com/"
     },
     {
         "id": 5,
-        "name": "cliente 05 logo",
-        "image": "./clients/05.svg"
+        "name": "Lucas Marks Logo",
+        "image": "./clients/logo_LM.avif",
+        "link": "https://lucasmarks.com.ar/"
     },
     {
         "id": 6,
-        "name": "cliente 06 logo",
-        "image": "./clients/06.svg"
+        "name": "Sal & Silvetti Logo",
+        "image": "./clients/logo_salsilvetti.avif"
     },
     {
         "id": 7,
-        "name": "cliente 07 logo",
-        "image": "./clients/01.svg"
-    },
-    {
-        "id": 8,
-        "name": "cliente 08 logo",
-        "image": "./clients/02.svg"
+        "name": "Islay Asesore de seguros Logo",
+        "image": "./clients/logo_islay.avif"
     }
 ]

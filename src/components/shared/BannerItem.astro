@@ -8,18 +8,15 @@ export interface Props {
 const { className, text, textColor } = Astro.props;
 ---
 
-<div class=`flex items-center justify-center gap-1 ${className} ${textColor}`>
+<div
+  class=`flex items-center justify-start md:justify-center  gap-2 md:gap-1 w-full  ${className} ${textColor}`
+>
   <img
-    class="img"
+    class="h-[30px] xl:h-[40px]"
     src="./img/tilde.avif"
     alt=""
   />
-  <p class="text-2xl font-semibold">{text}</p>
+  <p class="text-xl md:text-base lg:text-xl xl:text-2xl font-semibold">
+    {text}
+  </p>
 </div>
-
-<style>
-  .img {
-    height: 40px;
-    mix-blend-mode: darken;
-  }
-</style>

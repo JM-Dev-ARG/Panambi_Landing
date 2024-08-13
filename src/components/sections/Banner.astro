@@ -15,10 +15,12 @@ const texto = [
 ];
 ---
 
-<Container className="grid place-items-center">
-  <span class="border-b-[3px] border-violet-500 w-[60%] mt-10"></span>
-  <div class="flex justify-center items-center gap-6 my-8">
+<div class="grid place-items-center w-full">
+  <span class="border-b-[3px] border-violet-500 w-[40%] mt-10"></span>
+  <div
+    class="flex flex-col md:flex-row justify-center items-center gap-2 lg:gap-6 my-8 md:w-[95%] lg:w-[87%] xl:w-[80%]"
+  >
     {texto.map((text) => <BannerItem text={text.texto} />)}
   </div>
-  <span class="border-t-[3px] border-violet-500 w-[60%]"></span>
-</Container>
+  <span class="border-t-[3px] border-violet-500 w-[40%]"></span>
+</div>
