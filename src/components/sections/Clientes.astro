@@ -7,23 +7,23 @@ import Container from "../shared/Container.astro";
 <span id="clientes"></span>
 <Container>
   <div class="w-full flex justify-center items-center">
-    <div class="w-[90%] xl:w-full flex flex-col justify-center items-center">
+    <div class="w-[95%] xl:w-full flex flex-col justify-center items-center">
       <Carrousel
         duration="slow"
         direction="right"
         pause="true"
-        classSlider="gap-6"
+        classSlider="gap-2 lg:gap-6"
       >
         {
           dataClientes.map((client) => (
-            <div class="p-2 grayscale transition duration-200 hover:grayscale-0">
+            <div class="p-2 transition duration-200 ">
               <a
                 href={client.link}
                 target="_blank"
               >
                 <img
                   src={client.image}
-                  class="h-[150px] w-auto mix-blend-multiply  lg:w-[200px] lg:grayscale lg:opacity-50 lg:hover:grayscale-0 lg:hover:opacity-100 lg:transition-all lg:duration-600 aspect-[1/1] object-contain"
+                  class="h-[170px] w-auto mix-blend-multiply lg:grayscale lg:opacity-50 lg:hover:grayscale-0 lg:hover:opacity-100 lg:transition-all lg:duration-600 aspect-[1/1] object-contain"
                   loading="lazy"
                   alt={client.name}
                   width=""
