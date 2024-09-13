@@ -15,9 +15,7 @@ import CardTeam from "../shared/CardTeam.astro";
     class="flex-row items-center py-5"
     id="team"
   >
-    <div
-      class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 place-items-center gap-4"
-    >
+    <div class="grid md:grid-cols-1 lg:grid-cols-3 place-items-center gap-4">
       {
         teamData.team.map(
           ({ title, description, name, /* link,  */ profile }) => (
