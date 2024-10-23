@@ -105,22 +105,21 @@ const currentPath = new URL(Astro.request.url).pathname;
           {/* //boton nav movil */}
           <div class="text-center grid place-items-center mt-3 lg:hidden">
             <div
-              class="lg:hidden w-[200px] block lg:w-auto rounded-r-2xl rounded-tl-2xl border border-[#b6bbbcff] bg-white overflow-hidden"
+              class="hidden w-full lg:block lg:w-auto rounded-r-2xl rounded-tl-2xl"
               id="navbar-default"
             >
-              <div
-                class="m-[3px] rounded-r-xl rounded-tl-xl bg-[#79ba80ff] hover:bg-[#598d5e] transition-all duration-300"
+              <a
+                class="text-white inline-flex"
+                aria-label="Link para mensaje directo al Wathsapp Agencia Panambi"
+                href="https://wa.me/5491131664971?text=Hola, quiero hacerles una consulta"
+                target="_blank"
               >
-                <a
-                  class="px-4 py-2 text-white inline-flex"
-                  aria-label="Link para mensaje directo al Wathsapp Agencia Panambi"
-                  href="https://wa.me/5491131664971?text=Hola, quiero hacerles una consulta"
-                  target="_blank"
-                  ><h2 class="text-center text-base font-normal leading-7">
-                    Contacto
-                  </h2>
-                </a>
-              </div>
+                <img
+                  class="w-[50px]"
+                  src="./img/whatsapp.avif"
+                  alt=""
+                />
+              </a>
             </div>
           </div>
         </div>
@@ -130,22 +129,21 @@ const currentPath = new URL(Astro.request.url).pathname;
           class="text-center lg:grid place-items-center mt-3 lg:mt-0 hidden lg:static"
         >
           <div
-            class="hidden w-full lg:block lg:w-auto rounded-r-2xl rounded-tl-2xl border border-[#b6bbbcff] bg-white overflow-hidden"
+            class="hidden w-full lg:block lg:w-auto rounded-r-2xl rounded-tl-2xl"
             id="navbar-default"
           >
-            <div
-              class="m-[3px] rounded-r-xl rounded-tl-xl bg-[#79ba80ff] hover:bg-[#598d5e] transition-all duration-300"
+            <a
+              class="text-white inline-flex"
+              aria-label="Link para mensaje directo al Wathsapp Agencia Panambi"
+              href="https://wa.me/5491131664971?text=Hola, quiero hacerles una consulta"
+              target="_blank"
             >
-              <a
-                class="px-4 py-2 text-white inline-flex"
-                aria-label="Link para mensaje directo al Wathsapp Agencia Panambi"
-                href="https://wa.me/5491131664971?text=Hola, quiero hacerles una consulta"
-                target="_blank"
-                ><h2 class="text-center text-base font-normal leading-7">
-                  Contacto
-                </h2>
-              </a>
-            </div>
+              <img
+                class="w-[50px]"
+                src="./img/whatsapp.avif"
+                alt=""
+              />
+            </a>
           </div>
         </div>
       </div>
