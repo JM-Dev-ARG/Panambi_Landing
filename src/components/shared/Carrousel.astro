@@ -27,7 +27,7 @@ const { direction, duration, pause, className, classSlider } = Astro.props;
     width: 100%;
   }
 
-  .contenedor[data-animated="true"] {
+  .contenedor/* [data-animated="true"] */ {
     overflow: hidden;
 
     mask: linear-gradient(90deg, transparent, white 3%, white 97%, transparent);
@@ -59,14 +59,16 @@ const { direction, duration, pause, className, classSlider } = Astro.props;
   .contenedor[data-duration="fast"] {
     --_animation-duration: 10s;
   }
-
+  .contenedor[data-duration="normal"] {
+    --_animation-duration: 30s;
+  }
   .contenedor[data-duration="slow"] {
     --_animation-duration: 50s;
   }
 
-  .contenedor[data-animated="true"] .slider {
+  .contenedor/* [data-animated="true"] */ .slider {
     flex-wrap: nowrap;
-    animation: scroll var(--_animation-duration, 30s)
+    animation: scroll var(--_animation-duration, 60s)
       var(--_animation-direction, forwards) linear infinite;
   }
   .slider {
@@ -84,15 +86,37 @@ const { direction, duration, pause, className, classSlider } = Astro.props;
 </style>
 
 <script>
-  const contenedores = document.querySelectorAll(".contenedor");
+  /* document.addEventListener("DOMContentLoaded", () => {
+    let currentUrl = location.origin + location.pathname;
 
-  if (!window.matchMedia("(prefers-reduce-motion: reduce)").matches) {
+    new MutationObserver(() => {
+      if (location.href !== currentUrl) {
+        currentUrl = location.href;
+        console.log("currentUrl: ", currentUrl);
+
+        if (!window.matchMedia("(prefers-reduce-motion: reduce)").matches) {
+          addAnimation();
+        } else {
+          console.log("Animation is disabled due to prefers-reduce-motion.");
+        }
+      }
+    }).observe(document, { subtree: true, childList: true });
+  }); */
+  /*   let animationAlowed = window.matchMedia(
+    "(prefers-reduce-motion: no-preference)"
+  ).matches;
+  console.log(animationAlowed);
+
+  if (!animationAlowed) {
+    console.log("ingreso aqui");
+
     addAnimation();
   } else {
     console.log("Animation is disabled due to prefers-reduce-motion.");
   }
 
   function addAnimation() {
+    const contenedores = document.querySelectorAll(".contenedor");
     contenedores.forEach((contenedor) => {
       contenedor.setAttribute("data-animated", "true");
 
@@ -106,5 +130,5 @@ const { direction, duration, pause, className, classSlider } = Astro.props;
         slider.appendChild(duplicarItem);
       });
     });
-  }
+  } */
 </script>

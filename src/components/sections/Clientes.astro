@@ -6,29 +6,36 @@ import Container from "../shared/Container.astro";
 
 <span id="clientes"></span>
 <Container>
-  <div class="w-full flex justify-center items-center">
+  <div class="w-full flex justify-center items-center mb-20">
     <div class="w-[95%] xl:w-full flex flex-col justify-center items-center">
       <Carrousel
-        duration="slow"
+        duration="normal"
         direction="right"
         pause="true"
-        classSlider="gap-2 lg:gap-6"
+        classSlider="gap-2 lg:gap-6 "
       >
         {
           dataClientes.map((client) => (
-            <div class="p-2 transition duration-200 ">
+            <div class="p-2 transition duration-200 relative group ">
               <a
                 href={client.link}
                 target="_blank"
               >
                 <img
                   src={client.image}
-                  class="h-[170px] w-auto mix-blend-multiply lg:grayscale lg:opacity-50 lg:hover:grayscale-0 lg:hover:opacity-100 lg:transition-all lg:duration-600 aspect-[1/1] object-contain"
+                  class="h-[170px] w-auto mix-blend-multiply  lg:opacity-80  lg:hover:opacity-100 lg:transition-all lg:duration-600 aspect-[1/1] object-contain pt-20 "
                   loading="lazy"
                   alt={client.name}
                   width=""
                   height=""
                 />
+                <span class=`${client.webImg ? "absolute" : "hidden"} h-[100px] w-auto invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-opacity ease duration-500 top-0 left-0 border border-violeta-300 rounded-xl overflow-hidden`>
+                  <img
+                    class="object-cover w-full h-full"
+                    src={client.webImg}
+                    alt=""
+                  />
+                </span>
               </a>
             </div>
           ))
@@ -37,3 +44,4 @@ import Container from "../shared/Container.astro";
     </div>
   </div>
 </Container>
+

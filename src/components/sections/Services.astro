@@ -13,54 +13,46 @@ import BtnContacto from "../shared/BtnContacto.astro";
       <Topic title="Servicios" />
     </div>
 
-    <div class="w-full flex-row py-5 lg:mb-14">
-      <div
-        class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-12 place-items-center"
-      >
-        <!-- card start-->
-        {
-          servicesData.map(
-            (
-              {
-                background,
-                name1,
-                name2,
-                /*  arrow, link, */ image,
-                textColor,
-              },
-              index
-            ) => (
-              <ServiceCard
-                className={
-                  index % 2 == 0
-                    ? "lg:justify-self-end"
-                    : "lg:justify-self-start"
-                }
-                textColor={textColor}
-                background={background}
-                name1={name1}
-                name2={name2}
-                image={image}
-              />
-            )
+    <div class="flex flex-col lg:flex-row gap-y-4 lg:gap-x-4 py-5 lg:mb-14">
+      <!-- card start-->
+      {
+        servicesData.map(
+          (
+            { background, name1, image, textColor, link, text, bullets, costo },
+            index
+          ) => (
+            <ServiceCard
+              className="card"
+              textColor={textColor}
+              background={background}
+              name1={name1}
+              image={image}
+              link={link}
+              text={text}
+              bullets={bullets}
+              costo={costo}
+            />
           )
-        }
-        <!-- card end-->
-      </div>
+        )
+      }
+
+      <!-- card end-->
     </div>
 
     <div
-      class="flex-row relative items-center my-6 p-5 md:p-14 bg-zinc-200 rounded-[45px]"
+      class="w-[90%] xl:w-[70%] relative my-6 p-5 md:p-14 bg-zinc-300 rounded-[45px]"
     >
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="justify-start items-center gap-[275px] flex">
+      <div class="flex w-full md:w-2/3 gap-4">
+        <div>
           <div
-            class="flex-col justify-start items-start gap-[26px] inline-flex text-black"
+            class="w-full flex-col justify-start items-center md:items-start gap-[26px] inline-flex text-black"
           >
             <!--  <div class="text-3xl font-medium">Hagamos que ocurra.💪​</div> -->
-            <div class="text-lg font-normal">
-              Para vender seguros por internet se necesita planificación,
-              tecnología y mentalidad de negocios.
+            <div
+              class="text-2xl font-normal text-balance text-center md:text-start"
+            >
+              Para <span class="font-semibold">vender seguros</span> por internet
+              se necesita planificación, tecnología y mentalidad de negocios.
             </div>
             <BtnContacto texto="Agenda una reunión" />
           </div>
@@ -77,7 +69,7 @@ import BtnContacto from "../shared/BtnContacto.astro";
     </div>
   </div>
 </Container>
-<style>
+<!-- <style>
   .serviceCardContainer {
     place-items: center;
   }
@@ -91,4 +83,38 @@ import BtnContacto from "../shared/BtnContacto.astro";
       place-items: end;
     }
   }
-</style>
+</style> -->
+
+<!-- <script>
+  const cardsImg = document.querySelectorAll(".img") as any;
+  cardsImg.forEach((img: any) => {
+    img.addEventListener("mouseenter", () => {
+      cardsImg.classList.add("scale-");
+    });
+    cardsImg.addEventListener("mouseleave", () => {
+      img.classList.remove("scale-105");
+    });
+  });
+</script>
+ -->
+<!-- <script>
+  const card = document.getElementById("card") as any;
+
+  card.forEach((c: any) => {
+    c.addEventListener("mouseenter", () => {
+      handleHover(true);
+    });
+    c.addEventListener("mouseleave", () => {
+      handleHover(false);
+    });
+  });
+
+  const handleHover = (isHovered: any) => {
+    const allImages = document.querySelectorAll(".image") as any;
+    allImages.forEach((img: any) => {
+      isHovered;
+      img.classList.add = "scale-[0.4]";
+    });
+  };
+</script> -->
+<!--  -->

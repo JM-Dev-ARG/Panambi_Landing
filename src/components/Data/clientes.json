@@ -3,31 +3,82 @@
         "id": 1,
         "name": "RPP Pesce Seguros Logo",
         "image": "./clients/logo_pesce.avif",
-        "link": "https://pesceseguros.com/"
+        "link": "https://pesceseguros.com/",
+        "webImg": "./clients/rpp-web.avif"
     },
     {
         "id": 2,
         "name": "Planifica Mejor Logo",
         "image": "./clients/logo_PM.avif",
-        "link": "https://planificamejor.com.ar/"
+        "link": "https://planificamejor.com.ar/",
+        "webImg": "./clients/pm-web.avif"
     },
     {
         "id": 3,
         "name": "Juan Pablo Araoz Logo",
         "image": "./clients/logo_araoz.avif",
-        "link": "https://jparaoz.com/"
+        "link": "https://jparaoz.com/",
+        "webImg": "./clients/araoz-web.avif"
     },
     {
         "id": 4,
         "name": "Belt Seguros Logo",
         "image": "./clients/logo_belt.avif",
-        "link": "https://www.beltseguros.com/"
+        "link": "https://www.beltseguros.com/",
+        "webImg": "./clients/belt-web.avif"
     },
     {
         "id": 5,
         "name": "Lucas Marks Logo",
         "image": "./clients/logo_LM.avif",
-        "link": "https://lucasmarks.com.ar/"
+        "link": "https://lucasmarks.com.ar/",
+        "webImg": "./clients/lucas-web.avif"
+    },
+    {
+        "id": 6,
+        "name": "Sal & Silvetti Logo",
+        "image": "./clients/logo_salsilvetti.avif"
+    },
+    {
+        "id": 7,
+        "name": "Islay Asesore de seguros Logo",
+        "image": "./clients/logo_islay.avif",
+        "link": "https://islayseguros.com/"
+    },
+    {
+        "id": 1,
+        "name": "RPP Pesce Seguros Logo",
+        "image": "./clients/logo_pesce.avif",
+        "link": "https://pesceseguros.com/",
+        "webImg": "./clients/rpp-web.avif"
+    },
+    {
+        "id": 2,
+        "name": "Planifica Mejor Logo",
+        "image": "./clients/logo_PM.avif",
+        "link": "https://planificamejor.com.ar/",
+        "webImg": "./clients/pm-web.avif"
+    },
+    {
+        "id": 3,
+        "name": "Juan Pablo Araoz Logo",
+        "image": "./clients/logo_araoz.avif",
+        "link": "https://jparaoz.com/",
+        "webImg": "./clients/araoz-web.avif"
+    },
+    {
+        "id": 4,
+        "name": "Belt Seguros Logo",
+        "image": "./clients/logo_belt.avif",
+        "link": "https://www.beltseguros.com/",
+        "webImg": "./clients/belt-web.avif"
+    },
+    {
+        "id": 5,
+        "name": "Lucas Marks Logo",
+        "image": "./clients/logo_LM.avif",
+        "link": "https://lucasmarks.com.ar/",
+        "webImg": "./clients/lucas-web.avif"
     },
     {
         "id": 6,

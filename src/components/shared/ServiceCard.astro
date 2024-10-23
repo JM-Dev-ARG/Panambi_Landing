@@ -3,51 +3,90 @@ export interface Props {
   background: string;
   textColor: string;
   name1: string;
-  name2: string;
-  /* arrow?: string;
-  link?: string; */
   image: string;
   className?: string;
+  text?: string;
+  link?: string;
+  bullets?: string[];
+  costo?: string;
 }
 
 const {
   background,
   name1,
-  name2,
-  /*  arrow, link, */ image,
+  image,
   textColor,
   className,
+  link,
+  text,
+  bullets,
+  costo,
 } = Astro.props;
 ---
 
 <div
   style={`background-color: ${background};`}
-  class=`h-[310px] max-w-[600px] w-full p-6 md:p-12 rounded-[45px] shadow-card border border-black ${textColor} relative ${className}`
+  class=`min-w-[300px] max-w-[400px] xl:max-w-[500px] justify-between items-start flex-1 py-10 px-6 rounded-[45px] shadow-card border border-black ${textColor} relative ${className} flex flex-col gap-10`
 >
-  <div class="h-full inline-flex flex-col justify-end items-start gap-[93px]">
-    <span
-      ><p class="text-3xl font-medium">{name1}</p>
-      <p class="text-3xl font-medium">{name2}</p></span
-    >
-
-    {
-      /*                   <a
-                    class="justify-start items-center gap-[15px] inline-flex"
-                    href={link}
-                  >
-                    <div class="w-[41px] h-[41px] relative">
-                      <img
-                        class="w-[41px] h-[41px] left-0 top-0 absolute"
-                        src={arrow}
-                      />
-                    </div>
-                    <div class="text-xl font-normal leading-7">Learn more</div>
-                  </a> */
-    }
+  <div class="w-full">
+    <p class="text-[clamp(30px,3vw,48px)] font-medium text-center text-balance">
+      {name1}
+    </p>
   </div>
-  <div
-    class="absolute -top-10 left-[100px] md:left-[300px] lg:left-[160px] xl:left-[300px] max-w-[320px] md:w-[320px]"
+
+  <div class="h-full">
+    <div class="w-full mb-8">
+      <p class="prose-invert text-[clamp(16px,1.5vw,18px)] mb-4">
+        {text}
+        <p class="text-[clamp(16px,2vw,20px)] font-semibold mb-3">
+          Que Incluye
+        </p>
+        <ul>
+          {
+            bullets?.map((bullet) => (
+              <span class="inline-flex gap-1 justify-center items-start">
+                <img
+                  class="h-4 mt-[3px]"
+                  src="./img/tilde.avif"
+                  alt="tilde PANAMBI"
+                />
+                <li class=" list-inside mb-1">{bullet}</li>
+              </span>
+            ))
+          }
+        </ul>
+      </p>
+    </div>
+
+    <div class=`${costo?"":"hidden"}`>
+      <p class="text-lg font-semibold">
+        Inversión desde: <span class="font-semibold text-xl">USD {costo}</span>
+      </p>
+    </div>
+  </div>
+
+  <div>
+    <div
+      class="w-[200px] block lg:w-auto rounded-r-2xl rounded-tl-2xl border border-[#b6bbbcff] bg-white overflow-hidden"
+      id="navbar-default"
+    >
+      <div
+        class="m-[3px] rounded-r-xl rounded-tl-xl bg-[#79ba80ff] hover:bg-[#598d5e] transition-all duration-300"
+      >
+        <a
+          class="px-4 py-2 text-white inline-flex"
+          aria-label="Link para mensaje directo al Wathsapp Agencia Panambi"
+          href=`https://wa.me/5491131664971?text=Hola, quiero hacerles una consulta sobre ${name1}`
+          target="_blank"
+          ><h2 class="text-center text-base font-normal leading-7">Comenzar</h2>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!--   <div
+    class=`hidden md:block absolute ${name1 === "Desarrollo Web" ? "-top-[10%]" : "-top-[5%]"} left-[10%] md:left-[75%] lg:left-[55%] w-[200px] lg:w-[250px] xl:w-[300px] z-10`
   >
     <img src={image} />
-  </div>
+  </div> -->
 </div>

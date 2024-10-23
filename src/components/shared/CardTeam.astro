@@ -11,24 +11,28 @@ const { title, description, name, /* link, */ profile } = Astro.props;
 ---
 
 <div
-  class="h-[380px] md:h-[320px] lg:h-[410px] flex-1 p-6 bg-white rounded-[45px] shadow-card border border-zinc-900 flex-col justify-start items-start gap-2.5 inline-flex text-black"
+  class="flex-1 bg-transparentflex-col justify-start items-end gap-2.5 inline-flex text-black rounded-b-[45px] relative h-[clamp(620px,3vw,700px)] mask"
 >
-  <div class="flex-col justify-start items-start gap-5 flex">
-    <div class="justify-start items-start">
-      <div class="h-[100px] justify-between items-center flex w-full gap-4">
-        <div
-          style={{ backgroundImage: `url(${profile})` }}
-          class="w-[90px] h-[100px] bg-cover bg-center customBorder"
-        >
-          <!-- <img
-            class="object-cover w-full h-full object-center customColor"
-            src={profile}
-            alt={name}
-          /> -->
-        </div>
-        <div class="w-[60%] flex-col justify-end items-start inline-flex">
-          <div class="text-lg font-normal">{title}</div>
-          <div class="text-xl font-medium">{name}</div>
+  <div class="flex-col justify-center items-center flex relative">
+    <div
+      class="h-[clamp(250px,30vw,300px)] justify-center items-center flex w-full gap-4 absolute bottom-[95%] z-0 left-0"
+    >
+      <div class="w-full h-full">
+        <img
+          class="object-contain w-full h-full object-bottom"
+          src={profile}
+          alt={name}
+        />
+      </div>
+    </div>
+
+    <div
+      class="z-10 shadow-btn border border-violeta-100 flex flex-col justify-center items-start rounded-[45px] p-6 gap-5 h-auto lg:max-h-[402px] bg-white"
+    >
+      <div class="w-full h-full flex-col justify-start items-start inline-flex">
+        <div class="text-2xl font-semibold">{name}</div>
+        <div class="text-lg font-semibold">
+          {title}
         </div>
       </div>
       <!-- <a
@@ -40,18 +44,21 @@ const { title, description, name, /* link, */ profile } = Astro.props;
           alt="vector"
         />
       </a> -->
+
+      <span class="w-full border border-violeta-100"></span>
+      <p class="text-lg h-[200px] md:h-[100px] lg:h-[250px] xl:h-[180px]">
+        {description}
+      </p>
     </div>
-    <span class="w-full border border-black"></span>
-    <p class="text-lg">{description}</p>
   </div>
 </div>
 
 <style>
-  .customBorder {
-    overflow: hidden;
-    background-color: brown;
-    border-radius: 33% 67% 38% 62% / 70% 35% 65% 30%;
-    border-image: fill 1
-      linear-gradient(0deg, #aa8abf41 100%, rgba(255, 255, 255, 0) 100%);
+  .mask {
+    background-image: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 36%,
+      #857993 92%
+    );
   }
 </style>

@@ -4,11 +4,13 @@ import CloseSVG from "../svgIcons/CloseSVG.astro";
 import MenuSVG from "../svgIcons/MenuSVG.astro";
 
 const navLinks = [
-  { href: "/#servicios", label: "Servicios" },
+  { href: "/servicios", label: "Servicios" },
   { href: "/#equipo", label: "Team" },
   { href: "/#clientes", label: "Clientes" },
   { href: "/#contacto", label: "Contacto" },
 ];
+
+const currentPath = new URL(Astro.request.url).pathname;
 ---
 
 <nav
@@ -17,14 +19,14 @@ const navLinks = [
 >
   <div
     id="navbar-web"
-    class="bg-transparent scrollanimation navbar-animation w-full lg:w-[80%] xl:w-[60%] lg:rounded-[16px] transition-all duration-300"
+    class="bg-[#f9f9f9] shadow-lg shadow-violeta-300/30 navbar-animation w-full lg:w-[80%] xl:w-[60%] lg:rounded-[16px] transition-all duration-300"
   >
     <div class="items-center max-w-screen-2xl mx-auto lg:flex lg:px-6">
       <div
         class="flex items-center justify-between m-auto px-4 lg:px-0 py-3 lg:py-4 lg:block z-10"
       >
         <a
-          href="/#inicio"
+          href={currentPath === "/" ? "/#inicio" : "/"}
           class="relative flex items-center gap-3"
         >
           <div class="inline-flex gap-2 justify-center items-center">
@@ -36,10 +38,7 @@ const navLinks = [
           id="menu-toggle"
           class="outline-none lg:hidden w-auto flex items-cente justify-center h-full"
         >
-          <MenuSVG
-            className=""
-            currenteColor="white"
-          />
+          <MenuSVG className="" />
           <CloseSVG className="hidden" />
         </button>
       </div>
@@ -71,13 +70,23 @@ const navLinks = [
                     <li class="hidden lg:block group lg:text-lg  font-medium textAnimation">
                       <a
                         id="navItem"
-                        class="block py-2 px-3  rounded md:bg-transparent md:p-0 hover:text-violeta-200 text-black lg:text-[#f9f9f9] "
+                        class={
+                          "block py-2 px-3  rounded md:bg-transparent md:p-0 hover:text-violeta-200 text-black " +
+                          (item.href === currentPath ? "text-violeta-200" : "")
+                        }
                         href={item.href}
                       >
                         {item.label}
                       </a>
 
-                      <div class="hidden md:block md:opacity-0 md:w-0 md:border-t-[3px] md:border-violeta-200 md:group-hover:w-full md:group-hover:opacity-100 md:duration-200 md:ease-linear">
+                      <div
+                        class={
+                          "hidden md:block md:opacity-0 md:w-0 md:border-t-[3px] md:border-violeta-200 md:group-hover:w-full md:group-hover:opacity-100 md:duration-200 md:ease-linear" +
+                          (item.href === currentPath
+                            ? " md:opacity-100 md:w-full"
+                            : "")
+                        }
+                      >
                         {" "}
                       </div>
                     </li>
@@ -258,78 +267,98 @@ const navLinks = [
 </style>
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const menuSVG = document.querySelector(
-      "#menu-toggle svg:first-child"
-    ) as SVGElement;
-    const closeSVG = document.querySelector(
-      "#menu-toggle svg:last-child"
-    ) as SVGElement;
-    const toggle = document.getElementById("menu-toggle") as HTMLButtonElement;
-    const menu = document.getElementById("menu") as HTMLElement;
-    const toggle2 = document.getElementById(
-      "menu-toggle2"
-    ) as HTMLButtonElement;
-    const navbar = document.getElementById("navbar") as HTMLElement;
-    const navLinks = document.querySelectorAll(
-      "#navLinksResponsive a"
-    ) as NodeListOf<HTMLAnchorElement>;
-    const navLinksResponsive = document.getElementById(
-      "navLinksResponsive"
-    ) as HTMLElement;
-    const navbarWeb = document.getElementById("navbar-web") as HTMLElement;
+  window.addEventListener("DOMContentLoaded", () => {
+    let currentUrl = location.origin + location.pathname;
 
-    window.addEventListener("scroll", () => {
-      const scrollTop = window.scrollY || document.documentElement.scrollTop;
-      if (scrollTop > 0) {
-        navbarWeb.classList.remove("bg-transparent");
-        navbarWeb.classList.add("bg-[#f9f9f9]");
-        menuSVG.setAttribute("stroke", "black");
-        navLinks.forEach((link) => {
-          link.classList.remove("lg:text-[#f9f9f9]");
-          link.classList.add("lg:text-black");
-        });
-      } else {
-        navbarWeb.classList.remove("bg-[#f9f9f9]");
-        navbarWeb.classList.add("bg-transparent");
-        menuSVG.setAttribute("stroke", "white");
-        navLinks.forEach((link) => {
-          link.classList.remove("lg:text-black");
-          link.classList.add("lg:text-[#f9f9f9]");
-        });
+    new MutationObserver(() => {
+      if (location.href !== currentUrl) {
+        currentUrl = location.href;
+        initNavbar();
       }
-    });
+    }).observe(document, { subtree: true, childList: true });
 
-    toggle.onclick = () => {
-      navbar.classList.remove("fixed");
-      menu.classList.toggle("showNavbar");
-      menu.classList.contains("showNavbar")
-        ? (menuSVG.classList.toggle("hidden"),
-          closeSVG.classList.remove("hidden"),
-          navLinksResponsive.classList.remove("-top-80"),
-          navbar.classList.add("fixed"))
-        : (menuSVG.classList.remove("hidden"),
-          navLinksResponsive.classList.add("-top-80"),
-          closeSVG.classList.toggle("hidden"));
-    };
+    function initNavbar() {
+      const menuSVG = document.querySelector(
+        "#menu-toggle svg:first-child"
+      ) as SVGElement;
+      const closeSVG = document.querySelector(
+        "#menu-toggle svg:last-child"
+      ) as SVGElement;
+      const toggle = document.getElementById(
+        "menu-toggle"
+      ) as HTMLButtonElement;
+      const menu = document.getElementById("menu") as HTMLElement;
+      const toggle2 = document.getElementById(
+        "menu-toggle2"
+      ) as HTMLButtonElement;
+      const navbar = document.getElementById("navbar") as HTMLElement;
+      const navLinks = document.querySelectorAll(
+        "#navLinksResponsive a"
+      ) as NodeListOf<HTMLAnchorElement>;
+      const navLinksResponsive = document.getElementById(
+        "navLinksResponsive"
+      ) as HTMLElement;
+      const navbarWeb = document.getElementById("navbar-web") as HTMLElement;
 
-    toggle2.onclick = () => {
-      menu.classList.toggle("showNavbar");
-      if (menu.classList.contains("showNavbar")) {
-        menuSVG.classList.add("hidden");
-        closeSVG.classList.remove("hidden");
-      } else {
-        menuSVG.classList.remove("hidden");
-        closeSVG.classList.add("hidden");
-      }
-    };
+      /*       window.addEventListener("scroll", () => {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        if (scrollTop > 0) {
+          navbarWeb.classList.remove("bg-transparent");
+          navbarWeb.classList.add("bg-[#f9f9f9]");
+          navbarWeb.classList.add("shadow-lg");
+          navbarWeb.classList.add("shadow-violeta-300/30");
+          menuSVG.setAttribute("stroke", "black");
+          navLinks.forEach((link) => {
+            link.classList.remove("lg:text-[#f9f9f9]");
+            link.classList.add("lg:text-black");
+          });
+        } else {
+          navbarWeb.classList.remove("bg-[#f9f9f9]");
+          navbarWeb.classList.remove("shadow-lg");
+          navbarWeb.classList.remove("shadow-violeta-300/30");
+          navbarWeb.classList.add("bg-transparent");
+          menuSVG.setAttribute("stroke", "white");
+          navLinks.forEach((link) => {
+            link.classList.remove("lg:text-black");
+            link.classList.add("lg:text-[#f9f9f9]");
+          });
+        }
+      }); */
 
-    navLinks.forEach((link) => {
-      link.onclick = () => {
-        menu.classList.remove("showNavbar");
-        menuSVG.classList.remove("hidden");
-        closeSVG.classList.add("hidden");
+      toggle.onclick = () => {
+        navbar.classList.remove("fixed");
+        menu.classList.toggle("showNavbar");
+        menu.classList.contains("showNavbar")
+          ? (menuSVG.classList.toggle("hidden"),
+            closeSVG.classList.remove("hidden"),
+            navLinksResponsive.classList.remove("-top-80"),
+            navbar.classList.add("fixed"))
+          : (menuSVG.classList.remove("hidden"),
+            navLinksResponsive.classList.add("-top-80"),
+            closeSVG.classList.toggle("hidden"));
       };
-    });
+
+      toggle2.onclick = () => {
+        menu.classList.toggle("showNavbar");
+        if (menu.classList.contains("showNavbar")) {
+          menuSVG.classList.add("hidden");
+          closeSVG.classList.remove("hidden");
+        } else {
+          menuSVG.classList.remove("hidden");
+          closeSVG.classList.add("hidden");
+        }
+      };
+
+      navLinks.forEach((link) => {
+        link.onclick = () => {
+          menu.classList.remove("showNavbar");
+          menuSVG.classList.remove("hidden");
+          closeSVG.classList.add("hidden");
+        };
+      });
+    }
+
+    // Ejecutar la inicialización del navbar
+    initNavbar();
   });
 </script>

@@ -1,42 +1,55 @@
 [
     {
         "id": 1,
-        "name1": "Estrategia de",
-        "name2": "Marketing y Negocios",
-        "textColor": "text-black",
-        "background": "#F3F3F3",
+        "name1": "Consultoría estratégica de Negocios de Seguros",
+        "textColor": "text-white",
+        "background": "#aa8abf",
         "arrow": "./services/ag.svg",
-        "link": "./",
-        "image": "./services/social.avif"
+        "link": "./servicios",
+        "image": "./services/consultoria.avif",
+        "text": "Impulsa y digitaliza tu negocio de seguros con nosotros como socios estratégicos. Conseguí el plan de acción personalizado y listo para implementar en tu negocio. ",
+        "bullets": [
+            "3 encuentros sincrónicos de 1 hora.",
+            "Compartiremos metodologías comprobadas sobre el desarrollo del negocio asegurador.",
+            "Recibirás un documento completo que incluye la auditoría, plan de acción y desarrollo personalizado."
+        ],
+        "costo": "600"
     },
     {
         "id": 2,
-        "name1": "Desarrollo",
-        "name2": "Web y Apps.",
-        "textColor": "text-black",
-        "background": "#d2df8a",
+        "name1": "Desarrollo Web",
+        "textColor": "text-white",
+        "background": "#254441",
         "arrow": "./services/ag.svg",
-        "link": "./",
-        "image": "./services/desarrollo.avif"
+        "link": "./servicios",
+        "image": "./services/des-web.avif",
+        "text": "Nuestra experiencia en el sector nos permite entender las oportunidades que tu empresa necesita para destacarse y escalar en este mercado. Desarrollamos sitios web y plataformas interactivas con tecnología e innovación actual que produce resultados de posicionamiento y marketing a gran escala.",
+        "bullets": [
+            "Desarrollo web con diseño y estructura 100% personalizado.",
+            "Totalmente responsivo y automatizado",
+            "1 casilla corporativa y alojamiento del sitio web por un año.",
+            "Asistencia técnica continua.",
+            "Hosting de la pagina web por un año (no incluye la compra del dominio).",
+            "Formulario de contacto y recopilación de clientes potenciales",
+            "3 modificaciones de texto e imagen sin cargo por año."
+        ],
+        "costo": "450"
     },
     {
         "id": 3,
-        "name1": "Inbound",
-        "name2": "Marketing",
-        "textColor": "text-white",
-        "background": "black ",
-        "arrow": "./services/aw.svg",
-        "link": "./",
-        "image": "./services/email_mkt.avif"
-    },
-    {
-        "id": 4,
-        "name1": "Marketing de",
-        "name2": "Contenidos",
+        "name1": "Estratégia de MKT Digital",
         "textColor": "text-black",
-        "background": "#aa8abf",
+        "background": "#F3F3F3",
         "arrow": "./services/ag.svg",
-        "link": "./",
-        "image": "./services/content.avif"
+        "link": "./servicios",
+        "image": "./services/mkt-digital.avif",
+        "text": "Consigue nuevos asegurados a traves de internet y preparate para llevar tu negocio al mundo digital de crecimiento constante.",
+        "bullets": [
+            "1 encuentro sincrónico de 1 hora para identificar necesidades, analizar procesos y recursos y construir un plan de marketing completo.",
+            "Trabajaremos en las areas de marketing que necesiten desarrollar o mejorar con nuestra expertise (publicidad, posicionamiento, ventas digitales, automatizaciones, marketing de redes sociales, etc)",
+            "Te brindaremos una estrategia marketing digital con un plan basado en resultados.",
+            "Recibirás un documento exclusivo con tu Estrategia multiplataforma y un plan de acción personalizado."
+        ],
+        "costo": "500"
     }
 ]
