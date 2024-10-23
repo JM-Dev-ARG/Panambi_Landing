@@ -112,7 +112,7 @@ const FormContacto = () => {
                         <label
                             for="nombre"
                             className="block mb-2 text-base font-medium text-black"
-                        >Nonbre
+                        >Nombre
                         </label>
                         <input
                             type="text"
