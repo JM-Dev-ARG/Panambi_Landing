@@ -43,7 +43,8 @@
         "id": 7,
         "name": "Islay Asesore de seguros Logo",
         "image": "./clients/logo_islay.avif",
-        "link": "https://islayseguros.com/"
+        "link": "https://islayseguros.com/",
+        "webImg": "./clients/islay-web.avif"
     },
     {
         "id": 1,
@@ -89,6 +90,7 @@
         "id": 7,
         "name": "Islay Asesore de seguros Logo",
         "image": "./clients/logo_islay.avif",
-        "link": "https://islayseguros.com/"
+        "link": "https://islayseguros.com/",
+        "webImg": "./clients/islay-web.avif"
     }
 ]

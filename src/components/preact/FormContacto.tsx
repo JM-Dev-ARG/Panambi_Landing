@@ -74,40 +74,7 @@ const FormContacto = () => {
                     onSubmit={submit}
                     className="space-y-8 lg:w-full"
                 >
-                    {/*                     <div className="flex justify-between md:justify-start items-center gap-8 w-full">
 
-                        <div className="flex items-center ">
-                            <input
-                                id="AgendarReunion"
-                                type="radio"
-                                value="Agendar Reunion"
-                                name="motivo"
-                                className="w-4 h-4 "
-                            />
-                            <label
-                                for="AgendarReunion"
-                                className="ms-2 text-base xl:text-lg font-medium text-black"
-                            >Agenda una reunión
-                            </label>
-
-                        </div>
-
-                        <div className="flex items-center justify-center ">
-                            <input
-                                id="ObtenerPropuesta"
-                                type="radio"
-                                value="Obtener Propuesta"
-                                name="motivo"
-                                className="w-4 h-4 "
-                            />
-                            <label
-                                for="ObtenerPropuesta"
-                                className="ms-2 text-base xl:text-lg font-medium text-black"
-                            >Obtene tu propuesta
-                            </label>
-                        </div>
-
-                    </div> */}
                     <div>
                         <label
                             for="nombre"
