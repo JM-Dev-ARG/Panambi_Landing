@@ -1,54 +1,83 @@
-# Positivus - Digital Marketing Agency Landing Page
+# 🌐 Sitio Web de Panambi Landing
 
-Introducing "Positivus" - a stunning and versatile Astro theme designed for digital marketing agencies.
+Este es el repositorio oficial del sitio web de **Panambi Landing**, una aplicación web construida con Astro. Panambi Landing es un landing page personal.
 
-Built with clean, modern aesthetics and leveraging the power of Astro and Tailwind, Positivus empowers you to craft a captivating website that showcases your agency's expertise and fosters trust with potential clients.
+## ![Captura del sitio](https://panambilanding.netlify.app/img/panambi_web.png)
 
-[![Static Badge](https://img.shields.io/badge/UI%2FUX-Olga-blue)](https://www.figma.com/@olgaaverchenko) [![View Demo](https://img.shields.io/badge/Develop-Manul_Thanura-red)](https://lk.linkedin.com/in/manulthanura)
-[![Static Badge](https://img.shields.io/badge/View_Demo-green)](https://positivustheme.vercel.app)
-[![Static Badge](https://img.shields.io/badge/Astro-orange)](https://astro.build/)
+## 🚀 Estructura del Proyecto
 
-![Cover](./public/cover.png)
+El proyecto sigue la estructura estándar de una aplicación Astro.
 
-## Theme Features
+```text
+/
+├── public/
+├── src/
+│   ├── components/
+│   ├── layouts/
+│   └── pages/
+├── astro.config.mjs
+├── tailwind.config.mjs
+└── package.json
+```
 
-Leveraging the power of Astro and Tailwind CSS, Positivus offers:
+- `public/`: Contiene todos los activos estáticos como imágenes y logos.
+- `src/`: Contiene el código fuente de la aplicación.
+- `src/components/`: Contiene componentes reutilizables de Astro y Preact, organizados en `Data`, `Icons`, `preact`, `sections`, `shared` y `svgIcons`.
+- `src/layouts/`: Contiene el `Layout.astro` principal que define la estructura de todas las páginas.
+- `src/pages/`: Contiene las páginas del sitio. `index.astro` es la página principal, y `api/sendMail.ts` es un endpoint para manejar los envíos de correo electrónico.
+- `astro.config.mjs`: Archivo de configuración principal de Astro.
+- `tailwind.config.mjs`: Archivo de configuración para Tailwind CSS.
+- `package.json`: Lista las dependencias y scripts del proyecto.
 
-- Clean and modern design.
-- SEO-friendly.
-- Multiple Layouts.
-- Seamless Navigation.
-- Pre-built Sections.
-- Customizable Components.
-- Mobile-Responsiveness.
+---
 
-## 🚀 Project Structure
+## ✨ Características
 
-The project is built using Astro.js and Tailwind CSS. Here's a quick look at the project structure:
+- **Vitrina de Servicios**: Presentación detallada de los servicios ofrecidos.
+- **Formulario de Contacto**: Un formulario de contacto (`FormContacto.tsx`) que utiliza una ruta de API para enviar correos a través de Mailgun.
+- **Diseño Responsivo**: El sitio web es completamente responsivo.
+- **Notificaciones**: Alertas personalizadas con SweetAlert2.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+---
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## 🧞 Comandos
 
-Any static assets, like images, can be placed in the `public/` directory.
+Todos los comandos se ejecutan desde la raíz del proyecto, desde una terminal:
 
-## 🧞 Commands
+| Comando           | Acción                                                     |
+| :---------------- | :--------------------------------------------------------- |
+| `npm install`     | Instala las dependencias                                   |
+| `npm run dev`     | Inicia el servidor de desarrollo local en `localhost:4321` |
+| `npm run build`   | Compila el sitio de producción en la carpeta `./dist/`     |
+| `npm run preview` | Previsualiza la compilación localmente, antes de desplegar |
 
-All commands are run from the root of the project, from a terminal:
+---
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## 👀 Stack Tecnológico & Dependencias
 
-## 👀 Want to learn more?
+- **Framework**: [Astro](https://astro.build/)
+- **UI Framework**: [Preact](https://preactjs.com/)
+- **Estilos**: [Tailwind CSS](https://tailwindcss.com/)
+- **Despliegue**: [Netlify](https://www.netlify.com/)
+- **Email**: [Mailgun](https://www.mailgun.com/)
+- **Alertas**: [SweetAlert2](https://sweetalert2.github.io/)
+- **Typescript**
 
-Feel free to check [Astro documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+---
 
-## 📄 License
+## 📸 Demo
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+🔗 [Ver sitio en producción](https://panambi.net/)
+
+---
+
+## 📄 Licencia
+
+Este proyecto es privado y fue desarrollado para **Panambi Landing**.
+
+---
+
+## 🙌 Agradecimientos
+
+- A [Astro](https://astro.build) por hacer el desarrollo web más simple y rápido.
+- A la comunidad de [Tailwind CSS](https://tailwindcss.com) por su enfoque moderno de estilos.
