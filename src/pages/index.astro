@@ -10,8 +10,34 @@ import Banner from "../components/sections/Banner.astro";
 ---
 
 <Layout title="Panambi - Mkt Digital y Desarrollo Web">
+  <div class="bg-verde-100 h-screen w-full relative overflow-hidden flex justify-center items-center flex-col gap-8 px-4">
+    <h1 class="text-6xl sm:text-9xl  text-center text-violeta-100 inline-block z-10 font-bold uppercase">Se vienen cosas nuevas</h1>      
+    <a
+                class="hover:scale-110 transition duration-200 ease-in-out block z-10"
+                aria-label="Link para mensaje directo al Wathsapp Agencia Panambi"
+                href="https://wa.me/5491131664971?text=Hola, quiero hacerles una consulta"
+                target="_blank"
+                id="btnWhatsapp"
+                
+              >
+                <img
+                  class="w-[100px]"
+                  src="./img/whatsapp.avif"
+                  alt=""
+                />
+              </a>
+              
+           
+        
+    <img
+       class="absolute  h-[130%] opacity-40 object-cover -bottom-[30%] -right-[20%] z-0" 
+      src="/svg/logotipo.svg"
+      alt="Logo Agencia Panambi"
+    />
+
+  </div>
   <!-- <NavBar /> -->
-  <header>
+  <!-- <header>
     <Hero />
   </header>
   <main class="space-y-16 overflow-hidden">
@@ -20,5 +46,5 @@ import Banner from "../components/sections/Banner.astro";
     <Team />
     <Clientes />
     <Contact />
-  </main>
+  </main> -->
 </Layout>
